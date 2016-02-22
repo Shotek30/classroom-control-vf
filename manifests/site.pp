@@ -42,5 +42,5 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "P is for Pupper, and that is good enough for ${::hostname}": }
+  notify { "P is for Puppet, that is good enough for ${::hostname}": }
 }
