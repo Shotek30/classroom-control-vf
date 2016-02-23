@@ -61,6 +61,7 @@ node default {
   #}
   
   include users
+  include skeleton
   
   notify { "P is for Puppet, that is good enough for ${::hostname}": }
 }
