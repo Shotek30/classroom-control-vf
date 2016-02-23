@@ -4,28 +4,28 @@ class nginx {
     ensure => present,
   }
   
-  file {'/var/www':
+  file {'docroot':
     ensure => directory,
+    path => "/var/www",
   }
   
-  file { '/var/www/index.html':
+  file { 'index':
     ensure => file,
+    path => '/var/www/index.html',
     source => 'puppet:///modules/nginx/index.html',
   }
 
-  file { '/etc/nginx/nginx.conf':
+  file { 'config':
     ensure => file,
+    path => '/etc/nginx/nginx.conf',
     source => 'puppet:///modules/nginx/nginx.conf',
     require => Package['nginx'],
     notify => Service['nginx'],
   }
   
-  file { '/etc/nginx/conf.d':
-    ensure => directory,
-  }
-  
-  file { '/etc/nginx/conf.d/default.conf':
+  file { 'block':
     ensure => file,
+    path => '/etc/nginx/conf.d/default.conf',
     source => 'puppet:///modules/nginx/default.conf',
     require => Package['nginx'],
     notify => Service['nginx'],
