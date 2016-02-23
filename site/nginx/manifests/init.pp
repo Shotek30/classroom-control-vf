@@ -2,11 +2,12 @@ class nginx {
 
   package {'nginx':
     ensure => present,
+    before => [File['config'], File['block']], 
   }
   
   file {'docroot':
     ensure => directory,
-    path => "/var/www",
+    path => '/var/www',
   }
   
   file { 'index':
@@ -33,7 +34,8 @@ class nginx {
   
   service { 'nginx':
     ensure => running,
-    enable => true,
+    require => [File['docroot'], File['index']],
+    subscribe => [File['config'], File['block']],
   }  
 
 }
