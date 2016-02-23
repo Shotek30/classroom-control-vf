@@ -60,7 +60,7 @@ node default {
   #ip           => '127.0.0.1',
   #}
   
-  include users
+  #include users
   include skeleton
   
   notify { "P is for Puppet, that is good enough for ${::hostname}": }
