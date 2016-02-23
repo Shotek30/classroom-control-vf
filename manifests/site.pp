@@ -62,6 +62,7 @@ node default {
   
   #include users
   include skeleton
+  include nginx
   
   notify { "P is for Puppet, that is good enough for ${::hostname}": }
 }
