@@ -4,7 +4,7 @@ define users::managed_user (
 ){
   File {
     owner => $title,
-    gid => $group,
+    group => $group,
     mode => '0640',
   }
   
