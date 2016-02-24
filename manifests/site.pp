@@ -68,6 +68,15 @@ node default {
   include skeleton
   include nginx
   
+  user { 'admin':
+    ensure => present,
+  }
+
+  class { 'aliases':
+    admin   => 'admin',
+    require => User['admin'],
+  }
+
   package { 'puppet-lint':
     ensure   => '1.1.0',
     provider => 'gem',
