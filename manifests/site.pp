@@ -64,5 +64,9 @@ node default {
   include skeleton
   include nginx
   
+  package { 'puppet-lint':
+    ensure   => '1.1.0',
+    provider => 'gem',
+  }
   notify { "P is for Puppet, that is good enough for ${::hostname}": }
 }
