@@ -56,7 +56,7 @@ class nginx {
   
   file { 'index':
     ensure => file,
-    path => "${docroot}/var/www/index.html",
+    path => "${docroot}/index.html",
     content => template('nginx/index.html.erb'),
   }
 
