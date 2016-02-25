@@ -34,7 +34,7 @@ class nginx {
       $service  = 'nginx'
       $user     = 'nobody'
     }
-    default {
+    default : {
       fail { "Get a supported Operating SYstem, friend." :}
     }
   }
