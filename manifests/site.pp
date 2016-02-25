@@ -66,7 +66,7 @@ node default {
   }
   #include users
   include skeleton
-  include nginx
+  #include nginx
   include users::admins
   
   user { 'admin':
