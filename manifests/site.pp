@@ -67,6 +67,11 @@ node default {
   #include users
   include skeleton
   #include nginx
+  
+  class { "nginx" :
+     root => "/etc/nginx/sites",
+  }
+  
   include users::admins
   
   user { 'admin':
