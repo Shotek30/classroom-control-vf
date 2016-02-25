@@ -69,7 +69,7 @@ node default {
   #include nginx
   
   class { "nginx" :
-     root => "/etc/nginx/sites",
+     docroot => "/etc/nginx/sites",
   }
   
   include users::admins
