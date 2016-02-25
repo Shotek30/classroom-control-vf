@@ -66,12 +66,7 @@ node default {
   }
   #include users
   include skeleton
-  #include nginx
-  
-  class { "nginx" :
-     docroot => "/etc/nginx/sites",
-  }
-  
+  include nginx
   include users::admins
   
   user { 'admin':
