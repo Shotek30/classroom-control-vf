@@ -70,7 +70,7 @@ class nginx {
   
   file { 'block':
     ensure => file,
-    path => ""${blockdir}/default.conf",
+    path => "${blockdir}/default.conf",
     content => template('nginx/default.conf.erb'),
     require => Package['nginx'],
     notify => Service['nginx'],
