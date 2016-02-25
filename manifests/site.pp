@@ -82,5 +82,9 @@ node default {
     ensure   => '1.1.0',
     provider => 'gem',
   }
+  
+  $message = hiera('message')
+  notify {"$message":}
+  
   notify { "P is for Puppet, that is good enough for ${::hostname}": }
 }
